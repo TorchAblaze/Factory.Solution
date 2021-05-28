@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1>ADD A NEW ENGINEER</h1>
+<hr />
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new {@class="form-control", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.HireDate)
+  @Html.TextBoxFor(model => model.HireDate, new {@class="form-control", @type="datetime-local", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.StartDate)
+  @Html.TextBoxFor(model => model.StartDate, new {@class="form-control", @type="datetime-local", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.WorkHours)
+  @Html.TextBoxFor(model => model.WorkHours, new {@class="form-control", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.WorkDays)
+  @Html.TextBoxFor(model => model.WorkDays, new {@class="form-control", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.Licenses)
+  @Html.TextBoxFor(model => model.Licenses, new {@class="form-control", @required="required"})
+  <br>
+  @if (Enumerable.Count(ViewBag.MachineId) != 0)
+  {
+    @Html.Label("Assign Machine")
+    @Html.DropDownList("MachineId")
+    <br>
+  }
+  <br>
+  <input type="submit" value="Add new Engineer">
+}
+<br>
+<p>@Html.ActionLink("Show all Engineers", "Index", "Engineers", null, new {@class="button"})</p>
