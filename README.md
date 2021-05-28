@@ -1,6 +1,6 @@
 # Project Name
 
-#### _Brief Project Description, 5/21/2021_
+#### _Brief Project Description, 5/28/2021_
 
 #### By _**Tiffany Greathead**_
 
@@ -19,11 +19,11 @@ Project Description.
 
 ### Installation
 
-1. Clone the repository: `$ git clone {clone link}`
-2. Navigate to the `{Template.Solution}` directory on your computer
+1. Clone the repository: `$ git clone https://github.com/TorchAblaze/Factory.Solution.git`
+2. Navigate to the `Factory.Solution` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. To setup a SQL database using MySQL:
-   - Create an `appsettings.json` file in the `{WeekFourTemplate}` directory
+   - Create an `appsettings.json` file in the `Factory` directory
    - Copy the text box below and paste into the `appsettings.json` file, replacing `<password>` with your MySQL password:
    ```
      {
@@ -34,9 +34,9 @@ Project Description.
    ```
    - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) and select the enter key to launch MySQL servers
 5. To run the console app:
-   - Navigate to `{Template.Solution/WeekFourTemplate}` in your command line
+   - Navigate to `Factory.Solution/Factory` in your command line
    - Run the commands:
-     - `dotnet restore` to restore the dependencies that are listed in `{Template.csproj}`
+     - `dotnet restore` to restore the dependencies that are listed in `Factory.csproj`
      - `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
      - `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
      - `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`
