@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Factory.Models
 {
@@ -13,11 +15,14 @@ namespace Factory.Models
     public string Name { get; set; }
 
     [Display(Name = "Installation Date")]
-    public string InstallDate { get; set; }
+    public DateTime InstallDate { get; set; } = DateTime.Now;
 
     [Display(Name = "Repairs Needed")]
     public string Repairs { get; set; }
     public string Urgency { get; set; }
+
+    [Display(Name = "Sceduled Repair Date")]
+    public DateTime RepairDate { get; set; } = DateTime.Now;
     public virtual ICollection<MachineEngineer> JoinEntities { get; set; }
   }
 }

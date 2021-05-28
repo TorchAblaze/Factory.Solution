@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Factory.Models
 {
@@ -13,10 +15,10 @@ namespace Factory.Models
     public string Name { get; set; }
 
     [Display(Name = "Hire Date")]
-    public string HireDate { get; set; }
+    public DateTime HireDate { get; set; } = DateTime.Now;
 
     [Display(Name = "Start Date")]
-    public string StartDate { get; set; }
+    public DateTime StartDate { get; set; } = DateTime.Now;
 
     [Display(Name = "Scheduled Work Hours")]
     public string WorkHours { get; set; }
