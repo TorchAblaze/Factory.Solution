@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1>ASSIGN TO MACHINE</h1>
+<hr />
+<h2>Assign @Html.DisplayFor(model => model.Name) to a machine</h2>
+
+@if (Enumerable.Count(ViewBag.MachineId) != 0)
+{
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.Label("Select Machine")
+    @Html.DropDownList("MachineId")
+
+    <input type="submit" value="Save">
+  }
+}
+else
+{
+  <h4>There aren't any machines available to assign</h4>
+  <p>@Html.ActionLink("Add new Machine", "Create", "Machines", null, new {@class="button"})</p>
+}
+<hr />
+<p>@Html.ActionLink("Back to engineer list", "Index", "Engineers", null, new {@class="button"})</p>

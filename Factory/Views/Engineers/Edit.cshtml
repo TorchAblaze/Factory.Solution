@@ -1,0 +1,59 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1>EDIT ENGINEER</h1>
+<hr />
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Name)
+  <br>
+  @Html.EditorFor(model => model.Name)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.HireDate)
+  <br>
+  @Html.EditorFor(model => model.HireDate)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.StartDate)
+  <br>
+  @Html.EditorFor(model => model.StartDate)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.WorkHours)
+  <br>
+  @Html.EditorFor(model => model.WorkHours)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.WorkDays)
+  <br>
+  @Html.EditorFor(model => model.WorkDays)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.Licenses)
+  <br>
+  @Html.EditorFor(model => model.Licenses)
+  <br>
+  <br>
+  @if (Enumerable.Count(ViewBag.MachineId) != 0)
+  {
+    @Html.Label("Assign Machine")
+    <br>
+    @Html.DropDownList("MachineId")
+    <br>
+    <br>
+  }
+  <input type="submit" value="Save">
+  <br>
+  <br>
+}
+<hr />
+<p>@Html.ActionLink("Back to Engineer List", "Index", "Engineers", null, new {@class="button"})</p>

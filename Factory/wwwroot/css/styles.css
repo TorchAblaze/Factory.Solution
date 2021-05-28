@@ -1,9 +1,30 @@
+body {
+  text-align: center;
+}
+
 div#footer {
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
   color: #ccc;
-  background: #333;
+  background: rgba(246, 6, 6, 0.5);
   padding: 8px;
+}
+
+a:link.button,
+a:visited.button {
+  color: black;
+  font-size: medium;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid #1de2e9b9;
+  border-radius: 50px;
+  margin: 3px;
+}
+
+a:hover.button {
+  background-color: #1de2e9b9;
 }

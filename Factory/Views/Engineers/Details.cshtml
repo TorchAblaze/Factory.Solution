@@ -1,0 +1,41 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1>ENGINEER INFOMRATION</h1>
+<hr />
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.HireDate):</strong> @Html.DisplayFor(model => model.HireDate)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.StartDate):</strong> @Html.DisplayFor(model => model.StartDate)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.WorkHours):</strong> @Html.DisplayFor(model => model.WorkHours)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.WorkDays):</strong> @Html.DisplayFor(model => model.WorkDays)</p>
+<p class="blocktext"><strong>@Html.DisplayNameFor(model => model.Licenses):</strong> @Html.DisplayFor(model => model.Licenses)</p>
+@if (@Model.JoinEntities.Count == 0)
+{
+  <h4>This engineer isn't assigned to a machine</h4>
+}
+else
+{
+  <h4>Machines @Html.DisplayFor(model => model.Name) is assigned to:</h4>
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Machine.Name</li>
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.MachineEngineerId)
+        <input type="submit" value="Delete" class="delete"/>
+      }
+    }
+  </ul>
+}
+<hr />
+<p>@Html.ActionLink("Assign to Machine", "AddMachine", new { id = Model.EngineerId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Back to engineer list", "Index", "Engineers", null, new { @class="button" })</p>
+<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId}, new {@class="button"})</p>
+<p>@Html.ActionLink("Remove Engineer", "Delete", new { id = Model.EngineerId}, new {@class="button"})</p>
+
