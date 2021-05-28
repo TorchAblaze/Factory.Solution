@@ -4,7 +4,7 @@
 
 @model Factory.Models.Engineer
 
-<h1>ASSIGN TO MACHINE</h1>
+<h1>MACHINE ASSIGNMENT</h1>
 <hr />
 <h2>Assign @Html.DisplayFor(model => model.Name) to a machine</h2>
 
@@ -15,8 +15,10 @@
     @Html.HiddenFor(model => model.EngineerId)
 
     @Html.Label("Select Machine")
+    <br>
     @Html.DropDownList("MachineId")
-
+    <br>
+    <br>
     <input type="submit" value="Save">
   }
 }

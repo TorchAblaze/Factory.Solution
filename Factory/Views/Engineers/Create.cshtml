@@ -30,11 +30,12 @@
   @if (Enumerable.Count(ViewBag.MachineId) != 0)
   {
     @Html.Label("Assign Machine")
+    <br>
     @Html.DropDownList("MachineId")
     <br>
   }
   <br>
   <input type="submit" value="Add new Engineer">
 }
-<br>
+<hr />
 <p>@Html.ActionLink("Show all Engineers", "Index", "Engineers", null, new {@class="button"})</p>
