@@ -16,21 +16,13 @@
   @Html.TextBoxFor(model => model.InstallDate, new {@class="form-control", @type="datetime-local", @required="required"})
   <br>
   @Html.LabelFor(model => model.Repairs)
-  @Html.TextBoxFor(model => model.Repairs, new {@class="form-control", @required="required"})
+  @Html.TextBoxFor(model => model.Repairs, new {@class="form-control"})
   <br>
   @Html.LabelFor(model => model.Urgency)
-  @Html.TextBoxFor(model => model.Urgency, new {@class="form-control", @required="required"})
+  @Html.TextBoxFor(model => model.Urgency, new {@class="form-control"})
   <br>
   @Html.LabelFor(model => model.RepairDate)
-  @Html.TextBoxFor(model => model.RepairDate, new {@class="form-control", @type="datetime-local", @required="required"})
-  <br>
-  @if (Enumerable.Count(ViewBag.EngineerId) != 0)
-  {
-    @Html.Label("Assign Engineer")
-    <br>
-    @Html.DropDownList("EngineerId")
-    <br>
-  }
+  @Html.TextBoxFor(model => model.RepairDate, new {@class="form-control", @type="datetime-local"})
   <br>
   <input type="submit" value="Add new Machine">
 }

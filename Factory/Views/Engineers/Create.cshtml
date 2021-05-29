@@ -27,14 +27,6 @@
   @Html.LabelFor(model => model.Licenses)
   @Html.TextBoxFor(model => model.Licenses, new {@class="form-control", @required="required"})
   <br>
-  @if (Enumerable.Count(ViewBag.MachineId) != 0)
-  {
-    @Html.Label("Assign Machine")
-    <br>
-    @Html.DropDownList("MachineId")
-    <br>
-  }
-  <br>
   <input type="submit" value="Add new Engineer">
 }
 <hr />
