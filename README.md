@@ -1,12 +1,12 @@
-# Project Name
+# Dr. Sillystringz's Factory
 
-#### _Brief Project Description, 5/28/2021_
+#### _Factory machine and employee tracker website, 5/28/2021_
 
 #### By _**Tiffany Greathead**_
 
 ## Description
 
-Project Description.
+A website that allows the fictional Dr. Sillystringz to track machines installed in their factory and any repairs they need. The factory manager can also add engineers when they're hired and keep track of the machines they are assigned to via the use of many to many relationships.
 
 ## Setup and Use
 
