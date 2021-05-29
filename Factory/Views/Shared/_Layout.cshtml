@@ -10,7 +10,6 @@
     <div class="container">
       @RenderBody()
       @await Html.PartialAsync("Footer")
-      <br>
       <p>@Html.ActionLink("Home", "Index", "Home", null, new {@class="button"})</p>
     </div>
   </body>
