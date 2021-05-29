@@ -5,5 +5,19 @@
 @using Factory.Models;
 
 <h1>MACHINES</h1>
-
-<p>@Html.ActionLink("Add new Machine", "Create")</p>
+<hr />
+@if (Model.Count == 0)
+{
+  <h3>No machines have been added yet</h3>
+}
+else
+{
+  <ol>
+    @foreach (Machine machine in Model)
+    {
+      <li class="blocktext">@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId})</li>
+    }
+  </ol>
+}
+<hr />
+<p>@Html.ActionLink("Add new Machine", "Create", "Machines", null, new {@class="button"})</p>

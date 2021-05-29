@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>ADD A NEW MACHINE</h1>
+<hr />
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new {@class="form-control", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.InstallDate)
+  @Html.TextBoxFor(model => model.InstallDate, new {@class="form-control", @type="datetime-local", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.Repairs)
+  @Html.TextBoxFor(model => model.Repairs, new {@class="form-control", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.Urgency)
+  @Html.TextBoxFor(model => model.Urgency, new {@class="form-control", @required="required"})
+  <br>
+  @Html.LabelFor(model => model.RepairDate)
+  @Html.TextBoxFor(model => model.RepairDate, new {@class="form-control", @type="datetime-local", @required="required"})
+  <br>
+  @if (Enumerable.Count(ViewBag.EngineerId) != 0)
+  {
+    @Html.Label("Assign Engineer")
+    <br>
+    @Html.DropDownList("EngineerId")
+    <br>
+  }
+  <br>
+  <input type="submit" value="Add new Machine">
+}
+<hr />
+<p>@Html.ActionLink("Show all Machines", "Index", "Machines", null, new {@class="button"})</p>
